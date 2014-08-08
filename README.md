@@ -67,7 +67,9 @@ define('CRON_KEY','N04FI9g1fSRRGUsj3S0LzmPHI');
 
 
 
-Manual
+MANUAL
+======
+
 
 This manual assumes you have already installed Twando. The below combined with the text help found within your actual Twando installation covers pretty much everything you'll ever need to know. 
 
@@ -84,6 +86,7 @@ Registering Your Application
 Once installed, the first step you must complete is to register your Twando application with Twitter. The homepage of your install will guide you through this process in full, complete with screenshots of the required steps. It's really very easy to do and once complete you will be able to enter your Consumer Key and Consumer Secret in the text boxes provided. You can edit these values at any time from the homepage of your install if required. Top tip: Only read and write access is required in your Twitter application settings to use Twando (this access level allows the sending of DMs also). 
 
 Authorizing a Twitter Account
+======
 
 You can authorize as many Twitter accounts as you like with your application; simply click the large "Sign in with Twitter" button. Top tip: If you are signed into a Twitter account that has already been authorized, Twitter will simply re-auth your application for that account (it won't give you the option to sign out of Twitter first). Therefore, when authorizing a new account, you should always ensure you are either signed out of all Twitter accounts on the Twitter website, or signed into the account you wish to authorize. 
 
@@ -100,6 +103,7 @@ Follow / Unfollow Settings
 To access the follow / unfollow settings for an authorized Twitter account, simply click the "Follows" link in the account table on the homepage of your install. There are then several tabbed options available which are detailed below. 
 
 Auto Follow Settings
+======
 
 There are several checkbox options under this tab:
 Auto follow back all followers / new followers of this account
@@ -108,19 +112,24 @@ Auto unfollow users who are not following you
 If ticked, Twando will check who you are following against who is following you and automatically unfollow anyone who's not following you when the follow cron job is run.
 Auto DM users when you follow them back
 If you want to send an Auto DM to your followers (when you automatically follow them back), tick this box. The DM will only be sent if you have set one in the "Auto DM Message" tab (detailed below). Of course, many people find this super annoying, but the option is there if you want it.
+
 Unfollow Exclusions
+======
 
 Twando allows you to specify unfollow exclusions; these come into play if you are using the "Auto unfollow users who are not following you" option detailed above. Any Twitter accounts you specify here will not be unfollowed automatically; this is really useful for example if you run Twando on your main personal Twitter account, but there are certain people you follow that you don't want to automatically unfollow. You can add as many exclusions as you require and then delete them later if you wish. When adding an exclusion, there is a checkbox titled "Follow these users on Twitter now?" which as the name suggests will follow the users you submit on Twitter. You can therefore use this screen to mass follow a list of Twitter users; there is even an additional checkbox which appears so you can mass follow on Twitter without needing to add the users to your exclusion list. 
 
 Follow Exclusions
+======
 
 This works in exactly the same way as "Unfollow Exclusions" except users specifed here will not be followed back when they follow you and you have enabled "Auto follow back". 
 
 Auto DM Message
+======
 
 If you have enabled "Auto DM users when you follow them back" then you can specify the message you will automatically DM to new followers here. To limit the annoyingness of this feature for your followers, the DM is sent when you follow back (not when they follow you), so at least the follower then has the option to reply to you if they wish. 
 
 Search to Follow
+======
 
 Twando allows you to search for new users to follow and mass follow these users with two clicks. Top tip: Mass following too quickly is a very easy way to get your Twitter account banned.
 Tweet Based Search
@@ -130,57 +139,71 @@ This method is slightly different in that it searches user data (screen name, fu
 Once the search is complete, tick the checkbox underneath the users you want to follow (there is a "Select all users" link above the results to select them all) and click the "Follow Selected Users" button to follow the selected users. Top tip: When following new users, you should untick the "Auto unfollow users who are not following you" from the "Auto Follow Settings" tab; a possible approach might be to disable auto unfollowing, follow some users and then re-enable auto unfollow after a week or so. 
 
 Tweet Settings
+======
 
 To access the tweet settings for an authorized Twitter account, simply click the "Tweets" link in the account table on the homepage of your install. There are then several tabbed options available which are detailed below. 
 
 Post Quick Tweet
+======
 
 Although Twando is certainly not intended as a replacement for your Twitter client of choice, or even the Twitter web interface, the ability to simply post a quick tweet from your account is included. This is also useful for checking your account is working as expected. 
 
 Scheduled Tweets
+======
 
 This screen lists all the tweets currently scheduled for the selected account. You can edit any scheduled tweet by clicking the "Edit" link; click the bin (trashcan) icon to delete a scheduled tweet. 
 
 Schedule a Tweet
+======
 
 Here you can schedule a tweet to be posted from the selected Twitter account. The time and date must be specified in MySQL format (YYYY-MM-DD HH:MM) but this is easily set by clicking the calendar icon which will bring up a time and date selector window. Tweets are posted based on the PHP time set in your hosting account; this may not be the same as your local time. The scheduled tweet cron posts scheduled tweets from before or exactly the time the cron is run, so the post time may not be exactly the same as the time you specify depending on how often you run the tweet cron job. 
 
 Bulk CSV Tweet Upload
+======
 
 This system allows you to upload a CSV of scheduled tweets. The CSV should contain just two columns; column 1 should contain the tweet time in MySQL format (YYYY-MM-DD HH:MM), column 2 the tweet text. There is an example csv included with your install. The maximum size of the CSV you can upload depends on your host; typically shared hosts limit file uploads to 2mb but you may be able to upload larger files. Top tip: Spreadsheet programs such as Microsoft Excel will sometimes convert the date into an incorrect format; it's therefore recommended to create your csv in a text editor such as Notepad if you are doing this manually. 
 
 Log Settings
+======
 
 To access the log settings for an authorized Twitter account, simply click the "Logs" link in the account table on the homepage of your install. There are then several tabbed options available which are detailed below. 
 
 Log Settings
+======
 
 This checkbox simple sets if you would like to log the actions for this account when either the follow or tweet cron job is run. By default this is enabled when you authorize a new account. We would recommend enabling logging for all accounts as the logs provide useful information. 
 
 View Follow Logs
+======
 
 This table displays the logs from the follow cron job. The information here shows who has unfollowed your account, who you have followed and consequently which users Twando auto followed or unfollowed for you. This screen also logs when automatic DMs are sent. In the "Affected Users" column you will see the Twitter profile images of the relevant users affected by a particular log entry. Hovering over the image will show additional useful information about their account (name, screen name, follower counts etc); clicking the image will open a new window link to their profile on Twitter.com. 
 
 View Tweet Logs
+======
 
 This table shows your scheduled tweet history and shows both the time the tweet was posted and also whether or not the tweet posting was sucessful. 
 
 Purge Log History
+======
 
 As the name suggests, this tab allows you to delete log history for a particular account if you wish. There is also an option to "Empty user cache"; the user cache is shared between all your Twitter accounts and is used to display more information about Twitter users in the "View Follow Logs" section. If one of your accounts is being followed by 1000 new users a day, the cache could get quite large quite quickly so you may want to empty it periodically. If you are proficient with phpMyAdmin, you can truncate the (tw_)user_cache table yourself at any time. This will not affect the log records; it just means that the additional information about a user (name, screen name, follower counts etc) will not be displayed in the "Affected Users" column in the "View Follow Logs" section. 
 
 Multi Account Functions
+======
 
 Once you have authorized two or more Twitter accounts, you can then make use of the multi account functions Twando provides. These can be accessed by clicking the "Multi account functions" link towards the bottom of the homepage of your install. There are then several tabbed options available which are detailed below. 
 
 Cross Follow Accounts
+======
 
 This option is extremely useful if you have a lot of Twitter accounts authorized with your Twando install and want to increase the number of followers to all of them. With one click, Twando will follow all your Twitter accounts from all your other Twitter accounts. You can also do the reverse and cross unfollow to remove the connection between accounts. 
 
 All Follow / Unfollow
+======
 
 This section allows you to follow or unfollow a list of screen names or Twitter id's from all your accounts. For example, if you had 100 Twitter accounts authorized and wanted them all to follow a particular user, you could perform this operation very easily here. 
 
 Multi Tweet
+======
 
 As the name suggests, you can enter a Tweet here which will be posted by all your Twitter accounts simultaneously.
