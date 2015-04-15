@@ -190,7 +190,7 @@ if ( ($_REQUEST['a'] == 'stf1update') and ($_REQUEST['search_term']) ) {
   foreach ($returned_users as $this_user_id => $this_user_data) {
 ?>
  <div style="float: left; width: 48px; border: 1px solid grey; text-align: center; margin: 0px 7px 3px 0px;">
-  <a href="https://twitter.com/account/redirect_by_id?id=<?=$this_user_id?>" target="_blank">
+  <a href="https://twitter.com/intent/user?user_id=<?=$this_user_id?>" target="_blank">
   <img src="<?=$this_user_data['profile_image_url']?>" width="48" height="48" title="Screen Name: <?=$this_user_data['screen_name'] . " \n"?>Full Name: <?=htmlentities($this_user_data['full_name'])  . " \n"?><?php if (is_numeric($this_user_data['friends_count'])) {?>Following: <?=number_format($this_user_data['friends_count']) . " \n"?><?php } ?><?php if (is_numeric($this_user_data['followers_count'])) {?>Followers: <?=number_format($this_user_data['followers_count'])  . " \n"?><?php } ?><?php if ($this_user_data['tweet']) {?>Last Tweet: <?=htmlentities($this_user_data['tweet'])  . " \n"?><?php } ?>" />
   </a><br />
   <input type="checkbox" class="dcheck" name="follow_ids[]" value="<?=$this_user_id?>" />
