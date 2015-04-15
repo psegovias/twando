@@ -287,10 +287,10 @@ class mySqlCon {
 
   //Echo image and rollover
   if ($qchecka['screen_name'] == "") {
-   echo '<a href="https://twitter.com/account/redirect_by_id?id=' . $user_id . '" target="_blank"><img class="affuser" src="inc/images/def.gif" /></a>';
+   echo '<a href="https://twitter.com/intent/user?user_id=' . $user_id . '" target="_blank"><img class="affuser" src="inc/images/def.gif" /></a>';
   } else {
    //Nearly used a jQuery tooltip, but bloaty and not really needed
-   echo '<a href="https://twitter.com/account/redirect_by_id?id=' . $qchecka['twitter_id'] . '" target="_blank">';
+   echo '<a href="https://twitter.com/intent/user?user_id=' . $qchecka['twitter_id'] . '" target="_blank">';
    echo  '<img title="' . $lang_ops[0] . ': ' . $qchecka['screen_name'] . " \n";
    echo  $lang_ops[1] . ': ' . $qchecka['actual_name'] . " \n"; 
    echo  $lang_ops[2] . ': ' . number_format($qchecka['friends_count']) . " \n";
