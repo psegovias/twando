@@ -332,7 +332,7 @@ Characters: <input type="text" name="count_box" id="count_box" size="3" value="<
 <option value="ti" <?php if ($_REQUEST['search_lang'] == 'ti') { echo 'selected="selected"'; } ?>>ትግርኛ</option>
 <option value="bo" <?php if ($_REQUEST['search_lang'] == 'bo') { echo 'selected="selected"'; } ?>>བོད་ཡིག</option>
 <option value="tk" <?php if ($_REQUEST['search_lang'] == 'tk') { echo 'selected="selected"'; } ?>>Türkmen, Түркмен</option>
-<option value="tl" <?php if ($_REQUEST['search_lang'] == 'tl') { echo 'selected="selected"'; } ?>>Wikang Tagalog, ᜏᜒᜃᜅ᜔ ᜆᜄᜎᜓᜄ᜔</option>
+<option value="tl" <?php if ($_REQUEST['search_lang'] == 'tl') { echo 'selected="selected"'; } ?>>Wikang Tagalog</option>
 <option value="tn" <?php if ($_REQUEST['search_lang'] == 'tn') { echo 'selected="selected"'; } ?>>Setswana</option>
 <option value="to" <?php if ($_REQUEST['search_lang'] == 'to') { echo 'selected="selected"'; } ?>>faka Tonga</option>
 <option value="tr" <?php if ($_REQUEST['search_lang'] == 'tr') { echo 'selected="selected"'; } ?>>Türkçe</option>
@@ -391,6 +391,7 @@ if ( ($_REQUEST['a'] == 'stf1update') and ($_REQUEST['search_term']) ) {
 <br style="clear: both;" />
 <input type="hidden" name="search_type" id="search_type" value="<?=(int)$_REQUEST['search_type']?>" />
 <input type="hidden" name="search_term" id="search_term" value="<?=strip_tags($_REQUEST['search_term'])?>" />
+<input type="hidden" name="search_lang" id="search_lang" value="<?=strip_tags($_REQUEST['search_type'])?>" />
 <input type="hidden" name="a" value="stf2update" />
 </form>
 <input type="submit" value="Follow Selected Users" class="submit_button_style" onclick="ajax_follow_settings_update('tab5','stf2_form');" />
