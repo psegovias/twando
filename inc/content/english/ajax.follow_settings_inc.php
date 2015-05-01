@@ -169,6 +169,13 @@ Characters: <input type="text" name="count_box" id="count_box" size="3" value="<
 </select></div>
 </div>
 <div class="cron_row">
+ <div class="cron_left">Language:</div>
+ <div class="cron_right"><select name="search_lang" id="search_lang" class="input_box_style" style="width: 120px;">
+ <option value="en" <?php if ($_REQUEST['search_lang'] == 'en') { echo 'selected="selected"'; } ?>>English</option>
+ <option value="ru" <?php if ($_REQUEST['search_lang'] == 'ru') { echo 'selected="selected"'; } ?>>Russian</option>
+</select></div>
+</div>
+<div class="cron_row">
   <div class="cron_left">Search term:</div>
   <div class="cron_right"><input type="text" name="search_term" id="search_term" class="input_box_style" value="<?=strip_tags($_REQUEST['search_term'])?>" /></div>
 </div>
