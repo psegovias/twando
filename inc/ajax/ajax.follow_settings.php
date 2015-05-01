@@ -135,14 +135,14 @@ if (mainFuncs::is_logged_in() != true) {
    break;
    case 'tab5':
 
-    if ( ($_REQUEST['a'] == 'stf1update') and ($_REQUEST['search_term']) ) {
+    if ( ($_REQUEST['a'] == 'stf1update') and ($_REQUEST['search_term']) and ($_REQUEST['search_lang']) ) {
 
      //Get twitter details and make connection
      $ap_creds = $db->get_ap_creds();
      $q1a = $db->get_user_data($_REQUEST['twitter_id']);
      $connection = new TwitterOAuth($ap_creds['consumer_key'], $ap_creds['consumer_secret'], $q1a['oauth_token'], $q1a['oauth_token_secret']);
      $returned_users = array();
-
+	 
      //Search type
      if ($_REQUEST['search_type'] == 1) {
 
@@ -151,7 +151,7 @@ if (mainFuncs::is_logged_in() != true) {
      */
 
        //Get Results
-       $content = $connection->get('search/tweets',array('q' => $_REQUEST['search_term'],'count' => TWITTER_TWEET_SEARCH_PP));
+       $content = $connection->get('search/tweets',array('q' => $_REQUEST['search_term'],'lang' => ($_REQUEST['search_lang']),'count' => TWITTER_TWEET_SEARCH_PP));
 
 
        if ($content->statuses) {
