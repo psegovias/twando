@@ -391,7 +391,7 @@ if ( ($_REQUEST['a'] == 'stf1update') and ($_REQUEST['search_term']) ) {
 <br style="clear: both;" />
 <input type="hidden" name="search_type" id="search_type" value="<?=(int)$_REQUEST['search_type']?>" />
 <input type="hidden" name="search_term" id="search_term" value="<?=strip_tags($_REQUEST['search_term'])?>" />
-<input type="hidden" name="search_lang" id="search_lang" value="<?=strip_tags($_REQUEST['search_type'])?>" />
+<input type="hidden" name="search_lang" id="search_lang" value="<?=strip_tags($_REQUEST['search_lang'])?>" />
 <input type="hidden" name="a" value="stf2update" />
 </form>
 <input type="submit" value="Follow Selected Users" class="submit_button_style" onclick="ajax_follow_settings_update('tab5','stf2_form');" />
