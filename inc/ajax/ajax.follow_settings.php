@@ -142,7 +142,7 @@ if (mainFuncs::is_logged_in() != true) {
      $q1a = $db->get_user_data($_REQUEST['twitter_id']);
      $connection = new TwitterOAuth($ap_creds['consumer_key'], $ap_creds['consumer_secret'], $q1a['oauth_token'], $q1a['oauth_token_secret']);
      $returned_users = array();
-	 
+
      //Search type
      if ($_REQUEST['search_type'] == 1) {
 

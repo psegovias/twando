@@ -197,7 +197,7 @@ Characters: <input type="text" name="count_box" id="count_box" size="3" value="<
 <option value="bs" <?php if ($_REQUEST['search_lang'] == 'bs') { echo 'selected="selected"'; } ?>>bosanski jezik</option>
 <option value="br" <?php if ($_REQUEST['search_lang'] == 'br') { echo 'selected="selected"'; } ?>>brezhoneg</option>
 <option value="bg" <?php if ($_REQUEST['search_lang'] == 'bg') { echo 'selected="selected"'; } ?>>български език</option>
-<option value="my" <?php if ($_REQUEST['search_lang'] == 'my') { echo 'selected="selected"'; } ?>>ဗမာစာ</option>
+<option value="my" <?php if ($_REQUEST['search_lang'] == 'my') { echo 'selected="selected"'; } ?>>Burmese</option>
 <option value="ca" <?php if ($_REQUEST['search_lang'] == 'ca') { echo 'selected="selected"'; } ?>>català</option>
 <option value="ch" <?php if ($_REQUEST['search_lang'] == 'ch') { echo 'selected="selected"'; } ?>>Chamoru</option>
 <option value="ce" <?php if ($_REQUEST['search_lang'] == 'ce') { echo 'selected="selected"'; } ?>>нохчийн мотт</option>
@@ -236,7 +236,7 @@ Characters: <input type="text" name="count_box" id="count_box" size="3" value="<
 <option value="hu" <?php if ($_REQUEST['search_lang'] == 'hu') { echo 'selected="selected"'; } ?>>magyar</option>
 <option value="ia" <?php if ($_REQUEST['search_lang'] == 'ia') { echo 'selected="selected"'; } ?>>Interlingua</option>
 <option value="id" <?php if ($_REQUEST['search_lang'] == 'id') { echo 'selected="selected"'; } ?>>Bahasa Indonesia</option>
-<option value="ie" <?php if ($_REQUEST['search_lang'] == 'ie') { echo 'selected="selected"'; } ?>>Originally called Occidental; then Interlingue after WWII</option>
+<option value="ie" <?php if ($_REQUEST['search_lang'] == 'ie') { echo 'selected="selected"'; } ?>>Interlingue</option>
 <option value="ga" <?php if ($_REQUEST['search_lang'] == 'ga') { echo 'selected="selected"'; } ?>>Gaeilge</option>
 <option value="ig" <?php if ($_REQUEST['search_lang'] == 'ig') { echo 'selected="selected"'; } ?>>Asụsụ Igbo</option>
 <option value="ik" <?php if ($_REQUEST['search_lang'] == 'ik') { echo 'selected="selected"'; } ?>>Iñupiaq, Iñupiatun</option>
