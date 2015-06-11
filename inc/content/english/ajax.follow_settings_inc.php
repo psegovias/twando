@@ -173,6 +173,7 @@ Characters: <input type="text" name="count_box" id="count_box" size="3" value="<
  <div class="cron_right"><select name="search_lang" id="search_lang" class="input_box_style" style="width: 120px;">
 <option value="all" <?php if ($_REQUEST['search_lang'] == 'all') { echo 'selected="selected"'; } ?>>All</option>
 <option value="en" <?php if ($_REQUEST['search_lang'] == 'en') { echo 'selected="selected"'; } ?>>English</option>
+<option value="es" <?php if ($_REQUEST['search_lang'] == 'es') { echo 'selected="selected"'; } ?>>Spanish</option>
 <option value="ab" <?php if ($_REQUEST['search_lang'] == 'ab') { echo 'selected="selected"'; } ?>>аҧсуа бызшәа, аҧсшәа</option>
 <option value="aa" <?php if ($_REQUEST['search_lang'] == 'aa') { echo 'selected="selected"'; } ?>>Afaraf</option>
 <option value="af" <?php if ($_REQUEST['search_lang'] == 'af') { echo 'selected="selected"'; } ?>>Afrikaans</option>
