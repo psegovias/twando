@@ -16,13 +16,27 @@ if ($error_array['message'] != "") {
 } else {
  echo mainFuncs::push_response(6) . '<br />';
 }
+
+if (!empty($_POST['username_login'])) {
+    $username = $_POST['username_login'];
+} else {
+ $username = "";
+}
+if (!empty($_POST['password_login'])) {
+    $password = $_POST['password_login'];
+} else {
+ $password = "";
+}
+
+
+
 ?>
 <form method="post" action="<?=BASE_LINK_URL?>">
 Username:<br />
-<input type="text" name="username_login" size="20" class="input_box_style" value="<?=$_POST['username_login']?>" />
+<input type="text" name="username_login" size="20" class="input_box_style" value="<?=$username=?>" />
 <br />
 Password:<br />
-<input type="password" name="password_login" size="20" class="input_box_style" value="<?=$_POST['password_login']?>" />
+<input type="password" name="password_login" size="20" class="input_box_style" value="<?=$password=?>" />
 <br />
 <input type="submit" value="Sign In!" name="login" id="login" class="submit_button_style" />
 <input type="hidden" name="a" value="login2" />
