@@ -21,18 +21,6 @@ include('class/class.mainfuncs.php');
 include('class/twitteroauth.php');
 include('content/' . TWANDO_LANG . '/lang.php');
 
-/*
-URL of intall. You can override this if you wish
-with a static define in config.php
-*/
-
-if (!defined(BASE_LINK_URL)) {
- if ($_SERVER['HTTPS']) {$url_check = 'https://';} else {$url_check = 'http://';}
- $url_check .= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
- $filename = array_pop(explode("/",$url_check));
- $url_check = str_replace($filename,"",$url_check);
- define('BASE_LINK_URL',$url_check);
-}
 
 /*
 Internal defines - you shouldn't need to change these
