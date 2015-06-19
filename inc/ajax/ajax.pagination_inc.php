@@ -5,6 +5,7 @@ http://www.twando.com/
 */
 
 //Work out pagination
+if (empty($_REQUEST['page_id'])) { $_REQUEST['page_id'] = "";}
 $per_page = TABLE_ROWS_PER_PAGE;
 $page = (int)$_REQUEST['page_id'];
 if ($page == 0) {$page = 1;}
