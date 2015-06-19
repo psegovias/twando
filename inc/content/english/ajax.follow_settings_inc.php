@@ -5,6 +5,8 @@ http://www.twando.com/
 */
 if (empty($_REQUEST['search_term']))
 { $search_term = ""; } else { $search_term = $_REQUEST['search_term']; }
+if (empty($_REQUEST['a']))
+{ $_REQUEST['a'] = ""; }
  //Show content here
  if ($_REQUEST['tab_id']) {
   //Show content based on tab ID
