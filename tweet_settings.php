@@ -21,7 +21,8 @@ if (mainFuncs::is_logged_in() != true) {
 
  //Get data here
  $q1a = $db->get_user_data($_GET['id']);
-
+if (empty($_POST['a']))
+{ $_POST['a'] = ""; }
  if ($_POST['a'] == 'csv_upload') {
   //Bulk CSV upload
   $header_info['on_load'] = "ajax_tweet_settings_tab('tab4');";
