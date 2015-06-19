@@ -9,8 +9,13 @@ exit;
 }
 global $db, $ap_creds;
 
+if (!empty($_GET['msg']))
+{
 if ((int)$_GET['msg']>0) {
  $response_msg = mainFuncs::push_response((int)$_GET['msg']);
+}
+} else {
+$response_msg = "";
 }
 ?>
 <?php
