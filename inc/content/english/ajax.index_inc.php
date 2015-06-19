@@ -4,7 +4,11 @@ Twando.com Free PHP Twitter Application
 http://www.twando.com/
 */
 ?>
+<?php if (isset($response_msg))
+{
+?>
 <?=$response_msg?>
+
 <?php
  if ($response_msg) {
  //If we already have a message from $_GET['msg'] in the main index.php include,
@@ -13,7 +17,7 @@ http://www.twando.com/
 <script type="text/javascript">$('#index_resp_msg').hide();</script>
 <?php
  }
-
+}
 ?>
 <table class="data_table">
  <tr>
