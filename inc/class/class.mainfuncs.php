@@ -13,16 +13,16 @@ class mainFuncs {
  public static function is_logged_in(){
 
   $logged_in = "";
-
+if (isset($_SESSION['twando_username'])) {
   if (strlen($_SESSION['twando_username']) > 3) {
    $logged_in = true;
-  } else {
-   $logged_in = false;
-  }
-
+  } 
   return $logged_in;
  }
-
+ else {
+   $logged_in = false;
+   return $logged_in;
+}
  /*
  Basic HTML page printing - no need to pass page titles, meta data
  and so on for this script
