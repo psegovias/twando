@@ -17,9 +17,10 @@ global $header_info;
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<?php
-if ($header_info['on_load']) {
-?>
+<? if (!empty($header_info['js_scripts']))
+{
+$header_info['js_scripts'];
+}?>
 <script type="text/javascript">
 $(document).ready(function() {
  <?=$header_info['on_load']?>
