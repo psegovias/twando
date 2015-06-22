@@ -14,7 +14,8 @@ if (mainFuncs::is_logged_in() != true) {
  $page_select = "not_logged_in";
 } else {
  $page_select = "cron_instructions";
-
+ if(!empty($_GET['cron_reset']))
+ {
  if ($_GET['cron_reset'] == 'yes') {
   //Update the cron status
   $db->query("UPDATE "  . DB_PREFIX . "cron_status SET cron_state = '0', last_updated = '" . $db->prep(date("Y-m-d H:i:s")) . "' WHERE cron_name = '" . $db->prep($_GET['cron_type']) . "'");
@@ -22,7 +23,7 @@ if (mainFuncs::is_logged_in() != true) {
   //To prevent the URL being refreshed accidentally by the user, redirect to page without query string
   Header("Location: " . $return_url);
  }
-
+}
 }
 
 mainFuncs::print_html($page_select);
