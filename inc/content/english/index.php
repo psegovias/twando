@@ -69,7 +69,7 @@ Consumer Secret:<br />
 </div>
 To authorize another account, make sure you are either signed out of all accounts or signed into the account you want to authorize on <a href="https://twitter.com/" target="_blank">Twitter</a> before clicking the button below.
 <br />
-<a href="redirect.php"><img src="inc/images/twitter_sign_in.jpg" style="margin: 5px 0px 0px 0px" alt="Sign in with Twitter" width="384" height="63" /></a>
+<a href="redirect.php"><img src="inc/images/sign-in-with-twitter-button.png" style="margin: 5px 0px 0px 0px" alt="Sign in with Twitter" width="492" height="108" /></a>
 <h2>Further Options</h2>
 <a href="multi_account_functions.php">Multi account functions</a><br />  
 <a href="cron_instructions.php">Cron job instructions</a><br />
