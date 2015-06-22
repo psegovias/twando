@@ -73,7 +73,7 @@ if (isset($_POST['a'])) {
 
 
 }
-}
+
 
 //Check if we need to load twitter api box here
 $ap_creds = @$db->get_ap_creds();
