@@ -45,7 +45,7 @@ commented out and the script will try and work it out for you, but it's better
 to specify this if possible
 */
 
-//define('BASE_LINK_URL','http://www.yoursite.com/twando/');
+define('BASE_LINK_URL','http://www.yoursite.com/twando/');
 
 
 ?>
