@@ -3,7 +3,10 @@
 Twando.com Free PHP Twitter Application
 http://www.twando.com/
 */
-
+if (empty($_REQUEST['search_term']))
+{ $search_term = ""; } else { $search_term = $_REQUEST['search_term']; }
+if (empty($_REQUEST['a']))
+{ $_REQUEST['a'] = ""; }
  //Show content here
  if ($_REQUEST['tab_id']) {
   //Show content based on tab ID
@@ -361,7 +364,7 @@ Characters: <input type="text" name="count_box" id="count_box" size="3" value="<
 </div>
 <div class="cron_row">
   <div class="cron_left">Search term:</div>
-  <div class="cron_right"><input type="text" name="search_term" id="search_term" class="input_box_style" value="<?=strip_tags($_REQUEST['search_term'])?>" /></div>
+  <div class="cron_right"><input type="text" name="search_term" id="search_term" class="input_box_style" value="<?=strip_tags($search_term)?>" /></div>
 </div>
 <br style="clear: both;" />
 <input type="hidden" name="a" value="stf1update" />
