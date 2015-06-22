@@ -14,6 +14,9 @@ if (strip_tags($_POST['return_url'] != "")) {
 }
 $response_msg = "";
 
+if (isset($_POST['a'])) {
+    
+
 //Set login
 if ($_POST['a'] == 'login2') {
 
@@ -35,13 +38,16 @@ if ($_POST['a'] == 'login2') {
  //End of do login sequence
  }
 }
+}
 
 //Check if logged in
 if (mainFuncs::is_logged_in() != true) {
  $page_select = "not_logged_in";
 } else {
  $page_select = "index";
+}
 
+if (isset($_POST['a'])) {
  //Do save keys update
  if ($_POST['a'] == 'savekeys2') {
 
@@ -66,6 +72,7 @@ if (mainFuncs::is_logged_in() != true) {
  }
 
 
+}
 }
 
 //Check if we need to load twitter api box here
