@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 <!-- Header -->
 <div id="header_main">
-  <a href="<?=BASE_LINK_URL?>"><img src="inc/images/logo.gif" width="407" height="147" alt="Twando" /></a>
+<a href="<?=BASE_LINK_URL?>"><h1>TWANDO</h1></a></div>
 </div>
 
 <!-- Centre main -->
