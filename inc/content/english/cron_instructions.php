@@ -62,7 +62,7 @@ foreach ($cron_types as $this_cron_type) {
  echo '<div class="cron_row">' . "\n";
  echo '<div class="cron_left" style="margin: 0px;">' . ucwords($this_cron_type) . ' cron job state:</div>';
  echo '<div class="cron_right">';
- if ($q2a['cron_state'] == 0) {echo 'Not running';}
+ if ($q2a['cron_state'] == 0) {echo 'Not running'; $ouput_date = "";}
  elseif ($q2a['cron_state'] == 1) {echo '<a href="cron_instructions.php?cron_reset=yes&cron_type=' . $this_cron_type . '" onclick="javascript:if(confirm(\'Are you sure you want to update the status of this cron job? This can cause multiple issues if the cron is still running.\')) return (true); else return (false)">Running</a>';}
  echo '&nbsp;&nbsp;&nbsp;<i>(' .  $ouput_date .  ')</i>';
  echo '</div>' . "\n";
