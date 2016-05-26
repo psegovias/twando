@@ -56,7 +56,7 @@ if ($run_cron == true) {
   if ($connection->http_code == 200) {
    //Update DB
    $tw_user = array('id' => $q1a['id'],
-                  'profile_image_url' => $content->profile_image_url,
+                  'profile_image_url' => $content->profile_image_url_https,
                   'screen_name' => $content->screen_name,
                   'followers_count' => $content->followers_count,
                   'friends_count' => $content->friends_count,
@@ -208,7 +208,7 @@ if ($run_cron == true) {
        //Make use of the fact friendship create/destroy returns said user
        $tw_user_cache = array(
                   'twitter_id' => $content->id,
-                  'profile_image_url' => $content->profile_image_url,
+                  'profile_image_url' => $content->profile_image_url_https,
                   'screen_name' => $content->screen_name,
                   'actual_name' => $content->name,
                   'followers_count' => $content->followers_count,
@@ -290,7 +290,7 @@ if ($run_cron == true) {
        //Make use of the fact friendship create/destroy returns said user
        $tw_user_cache = array(
                   'twitter_id' => $content->id,
-                  'profile_image_url' => $content->profile_image_url,
+                  'profile_image_url' => $content->profile_image_url_https,
                   'screen_name' => $content->screen_name,
                   'actual_name' => $content->name,
                   'followers_count' => $content->followers_count,
@@ -375,7 +375,7 @@ if ($run_cron == true) {
          //Cache user
          $tw_user_cache = array(
                   'twitter_id' => $user_row->id,
-                  'profile_image_url' => $user_row->profile_image_url,
+                  'profile_image_url' => $user_row->profile_image_url_https,
                   'screen_name' => $user_row->screen_name,
                   'actual_name' => $user_row->name,
                   'followers_count' => $user_row->followers_count,
