@@ -36,11 +36,11 @@ class mySqlCon {
  */
 
  private function db_connect() {
-  $this->db_link = mysql_connect($this->db_host,$this->db_user,$this->db_password);
-  $db_test2 = mysql_select_db($this->db_table,$this->db_link);
+  $this->db_link = mysqli_connect($this->db_host,$this->db_user,$this->db_password);
+  $db_test2 = mysqli_select_db($this->db_link,$this->db_table);
 
   if ( (!$this->db_link) or (!$db_test2) ) {
-   mainFuncs::print_html('mysql_error');
+   mainFuncs::print_html('mysqli_error');
    exit;
   }
 
@@ -51,7 +51,7 @@ class mySqlCon {
  */
 
  public function query($res,$pass_no = 1) {
-  $q1 = mysql_query($res,$this->db_link);
+  $q1 = mysqli_query($this->db_link,$res);
   if (!$q1) {
    $this->sql_error();
    if ($pass_no == 1) {
@@ -76,7 +76,7 @@ class mySqlCon {
  */
 
  public function fetch_array($res) {
-  return mysql_fetch_array($res);
+  return mysqli_fetch_array($res);
  }
 
  /*
@@ -84,7 +84,7 @@ class mySqlCon {
  */
 
  public function fetch_row($res) {
-  return mysql_fetch_row($res);
+  return mysqli_fetch_row($res);
  }
 
  /*
@@ -92,16 +92,19 @@ class mySqlCon {
  */
 
  public function num_rows($res) {
-  return mysql_num_rows($res);
+  return mysqli_num_rows($res);
  }
 
  /*
  SQL Result
  */
 
- public function sql_result($res,$par) {
-  return mysql_result($res,$par);
- }
+ 
+ public function sql_result($res, $par, $field=0) { 
+    $res->data_seek($par); 
+    $datarow = $res->fetch_array(); 
+    return $datarow[$field]; 
+} 
 
  /*
  SQL Error
@@ -109,7 +112,7 @@ class mySqlCon {
 
  public function sql_error() {
   if ($this->output_error == 1) {
-   echo "MySQL Error " . mysql_errno($this->db_link) . ": " . mysql_error($this->db_link) . "\n";
+   echo "MySQL Error " . mysqli_errno($this->db_link) . ": " . mysqli_error($this->db_link) . "\n";
   }
  }
 
@@ -356,7 +359,7 @@ class mySqlCon {
  */
 
  private function db_close() {
-  @mysql_close();
+  @mysqli_close();
  }
 
  /*
@@ -369,7 +372,7 @@ class mySqlCon {
    $mysql_string = stripslashes($mysql_string);
   }
 
-  $mysql_string = mysql_real_escape_string($mysql_string);
+  $mysql_string = mysqli_real_escape_string($this->db_link,$mysql_string);
 
   return $mysql_string;
  }

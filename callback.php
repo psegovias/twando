@@ -36,7 +36,7 @@ if ($connection->http_code == 200) {
  $tw_user = array('id' => $content->id,
                   'oauth_token' => $access_token['oauth_token'],
                   'oauth_token_secret' => $access_token['oauth_token_secret'],
-                  'profile_image_url' => $content->profile_image_url,
+                  'profile_image_url' => $content->profile_image_url_https,
                   'screen_name' => $content->screen_name,
                   'followers_count' => $content->followers_count,
                   'friends_count' => $content->friends_count,

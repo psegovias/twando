@@ -22,7 +22,7 @@ if (mainFuncs::is_logged_in() != true) {
   if ($connection->http_code == 200) {
    //Update DB
    $tw_user = array('id' => $q1a['id'],
-                  'profile_image_url' => $content->profile_image_url,
+                  'profile_image_url' => $content->profile_image_url_https,
                   'screen_name' => $content->screen_name,
                   'followers_count' => $content->followers_count,
                   'friends_count' => $content->friends_count,
