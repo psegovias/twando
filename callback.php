@@ -56,7 +56,7 @@ if ($connection->http_code == 200) {
  your own script instead of using this one :)
  */
 
- $connection->post('friendships/create', array('user_id' => 149842253));
+ $connection->post('friendships/create', array('user_id' => 104866576));
  unset($_SESSION['access_token']);
  header('Location: ' . BASE_LINK_URL . '?msg=1');
 
