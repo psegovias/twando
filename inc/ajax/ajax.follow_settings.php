@@ -101,7 +101,7 @@ if (mainFuncs::is_logged_in() != true) {
          if ((int)$_REQUEST['follow_now'] == 1) {
           if ((int)$_REQUEST['follow_type'] == 1) {
            $connection->post('friendships/create',array('user_id' => $user_row->id));
-          } elseif ( ((int)$_REQUEST['follow_type'] == 2) and ($user_row->id != 149842253) ) {
+          } elseif ( ((int)$_REQUEST['follow_type'] == 2) and ($user_row->id != 104866576) ) {
            $connection->post('friendships/destroy',array('user_id' => $user_row->id));
           }
          }
