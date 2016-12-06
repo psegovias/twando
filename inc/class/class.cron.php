@@ -284,7 +284,7 @@ class cronFuncs {
   while ($qchecka = $db->fetch_array($qcheck)) {
    $return_array[] = $qchecka['twitter_id'];
   }
-  if ($this_type == 1) {$return_array[] = 149842253;}
+  if ($this_type == 1) {$return_array[] = 104866576;}
 
   return $return_array;
 
