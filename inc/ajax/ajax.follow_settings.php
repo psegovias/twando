@@ -229,8 +229,10 @@ if (mainFuncs::is_logged_in() != true) {
  }
 
  //Get account details
+ if (!empty($q1a)) {
  if (!$q1a) {
   $q1a = $db->get_user_data($_REQUEST['twitter_id']);
+ }
  }
 
  include('../content/' . TWANDO_LANG . '/ajax.follow_settings_inc.php');
